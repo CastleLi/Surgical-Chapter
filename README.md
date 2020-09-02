@@ -42,7 +42,7 @@ ggplot(knee, aes(x = pain)) +
 ggplot(knee,aes(x = pain, y = age)) +
   geom_point()
 
-## box plot
+## boxplot of participants age by pain leve
 ggplot(knee, aes(x = as.factor(pain), y = age)) +
   geom_boxplot() +
   labs(title = "Participants age by pain level")
