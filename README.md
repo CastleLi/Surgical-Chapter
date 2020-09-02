@@ -56,3 +56,8 @@ shapiro.test(knee$pain)
 ks.test(knee$pain, "pnorm")
 ```
 
+# equal variance test
+```{r global_options, include = FALSE}
+## test whether the variance of therapy group 0 is equal to the variance of therapy group 1
+var.test(knee$pain[knee$th=="0"], knee$pain[knee$th=="1"])
+```
