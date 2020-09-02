@@ -47,3 +47,13 @@ ggplot(knee, aes(x = as.factor(pain), y = age)) +
   geom_boxplot() +
   labs(title = "Participants age by pain level")
 ```
+
+
+# Normality test
+```{r global_options, include = FALSE}
+# therapy 0
+shapiro.test(knee$pain[which(knee$th=="0")])
+# therapy 1
+shapiro.test(knee$pain[which(knee$th=="1")])
+```
+
