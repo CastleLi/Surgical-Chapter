@@ -1,7 +1,9 @@
 # Surgical-Chapter
 
+```{r global_options, include = FALSE}
 install.packages("GMMBoost")
 install.packages("ggplot2")
+```
 
 # Load in packages
 library(ggplot2)
