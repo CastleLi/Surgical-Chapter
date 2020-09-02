@@ -51,9 +51,8 @@ ggplot(knee, aes(x = as.factor(pain), y = age)) +
 
 # Normality test
 ```{r global_options, include = FALSE}
-# therapy 0
-shapiro.test(knee$pain[which(knee$th=="0")])
-# therapy 1
-shapiro.test(knee$pain[which(knee$th=="1")])
+shapiro.test(knee$pain)
+
+ks.test(knee$pain, "pnorm")
 ```
 
