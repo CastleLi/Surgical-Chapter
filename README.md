@@ -13,8 +13,14 @@ library(GMMBoost)
 # Load in the data
 data(knee)
 
-# plot the variable age
+# draw the histogram of variable age
 ggplot(knee, aes(x = age)) +
   geom_histogram(bins = 20, fill = "cornflowerblue", color = "white") + 
   labs(title = "Participants by age", x = "Age")
+
+# draw the density of variable age
+ggplot(knee, aes(x = age)) +
+  geom_histogram(aes(y = ..density..), bins = 20, fill = "cornflowerblue", color = "white") + 
+  labs(title = "Participants by age", x = "Age")+
+  geom_density(alpha = .2, fill = "antiquewhite3")
 ```
