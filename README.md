@@ -1,10 +1,13 @@
 # Surgical-Chapter
 
+# Data visualization
+## preparation
 ```{r global_options, include = FALSE}
 install.packages("GMMBoost")
 install.packages("ggplot2")
 ```
 
+## continuous variable
 ```{r global_options, include = FALSE}
 # Load in packages
 library(ggplot2)
@@ -24,3 +27,12 @@ ggplot(knee, aes(x = age)) +
   labs(title = "Participants by age", x = "Age")+
   geom_density(alpha = .2, fill = "antiquewhite3")
 ```
+
+## categorical variables
+```{r global_options, include = FALSE}
+# plot the bar chart of magnitude of pressure pain in the knee
+ggplot(knee, aes(x = pain)) + 
+  geom_bar(fill = "cornflowerblue", color="black") +
+  labs(x = "Pain", y = "Frequency", title = "Magnitude of pressure pain")
+```
+
