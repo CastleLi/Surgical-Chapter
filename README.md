@@ -61,3 +61,18 @@ ks.test(knee$pain, "pnorm")
 ## test whether the variance of therapy group 0 is equal to the variance of therapy group 1
 var.test(knee$pain[knee$th=="0"], knee$pain[knee$th=="1"])
 ```
+
+
+# non-inferiority test
+```{r global_options, include = FALSE}
+## estimate the summary statistics
+nc <- length(knee$pain[which(knee$th=="0")])
+nt <- length(knee$pain[which(knee$th=="1")])
+Cbar <- mean(knee$pain[which(knee$th=="0")])
+Tbar <- mean(knee$pain[which(knee$th=="1")])
+sigma2bar <- (var(knee$pain[which(knee$th=="0")])*(nc-1)+var(knee$pain[which(knee$th=="1")])*(nt-1))/(nc+nt-2)
+
+## calculate the p-value, assuming M = 0.5
+1-pnorm(abs(Tbar-Cbar-(-0.5))/sqrt(sigma2bar*(1/nc+1/nt)))
+## p-value = 0.2174
+```
