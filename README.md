@@ -5,7 +5,9 @@ install.packages("GMMBoost")
 install.packages("ggplot2")
 ```
 
+```{r global_options, include = FALSE}
 # Load in packages
+
 library(ggplot2)
 library(GMMBoost)
 
@@ -17,3 +19,4 @@ ggplot(knee, aes(x = age)) +
   geom_histogram(bins = 20) + 
   labs(title = "Participants by age",
        x = "Age")
+```
