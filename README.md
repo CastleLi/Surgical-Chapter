@@ -36,3 +36,13 @@ ggplot(knee, aes(x = pain)) +
   labs(x = "Pain", y = "Frequency", title = "Magnitude of pressure pain")
 ```
 
+## bivariate plots
+# simple scatterplot
+ggplot(knee,aes(x = pain, y = age)) +
+  geom_point()
+
+## box plot
+ggplot(knee, aes(x = as.factor(pain), y = age)) +
+  geom_boxplot() +
+  labs(title = "Participants age by pain level")
+
